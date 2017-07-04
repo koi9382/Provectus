@@ -1,80 +1,41 @@
+var string_arr = [ 'a   b c', 'ac b', 'b ac', 'ca b', 'fgdh hgu jh ', 'b ca', 'cba'  ];
+
+$( document ).ready(function() {
+    $(".arr").html("["+string_arr.join(",")+"]");
+});
 
 
 function findUniq() {
     
-    var string_arr = [ 'a   b c', 'ac b', 'b ac', 'ca b', 'b ca', 'te st', 'cba' ];
-    var char_arr = [];
-    var char_arr2 = [];
-    var char_arr3 = [];
-    var diff=false;
-    var type=false;
-    var solve;
+    
+    var dump = string_arr.slice();
+
+    var solve="";
+    var i;
+    var l=string_arr.length;
+    
     $(".js").html("");
-    string_arr[0]=string_arr[0].replace(/\s+/g,'');
-    string_arr[1]=string_arr[1].replace(/\s+/g,'');
-    string_arr[2]=string_arr[2].replace(/\s+/g,'');
-    for(var i=0; i<string_arr[0].length; i++) {
-        char_arr.push(string_arr[0][i]);
-    }
-    char_arr= char_arr.sort();
-
-    for(var i=0; i<string_arr[1].length; i++) {
-        char_arr2.push(string_arr[1][i]);
-
-    }    
-    char_arr2= char_arr2.sort();
     
-    for(var i=0; i<char_arr.length; i++) {
-        if (char_arr2[i] != char_arr[i])
-            diff=true;
-    }   
-    if (diff)
+    string_arr[0]=string_arr[0].split('').sort().join('').trim();
+    
+    for (i=1; i<l-1; i++) {
+
+        string_arr[i]=string_arr[i].split('').sort().join('').trim();
+                
+        if (string_arr[i] != string_arr[i-1])
         {
-            for(var i=0; i<string_arr[2].length; i++) {
-                char_arr3.push(string_arr[2][i]);
-            }
+            string_arr[i+1]=string_arr[i+1].split('').sort().join('').trim();
             
-            char_arr3= char_arr3.sort();
+            if (string_arr[i+1]==string_arr[i]) solve=dump[i-1];
+            else solve=dump[i];
+        }
+        
+    }
     
-            diff=false;
+    if (string_arr[l-2] != string_arr[l-1])
+        solve=dump[l-1];
 
-            for(var i=0; i<char_arr.length; i++) {
-                if (char_arr3[i] != char_arr[i])
-                    diff=true;
-            }   
-                        $(".js").append(char_arr3);
-                        $(".js").append("===<br />");  
-                        $(".js").append(char_arr2);
-                        $(".js").append("===<br />");  
-                        $(".js").append(char_arr);
-                        $(".js").append("===<br />");              
-            if (diff){ solve=string_arr[0]; }
-            else { solve=string_arr[1];}
-        }
-    else
-        {
-            for(var i=2; i<string_arr.length; i++) {
-                string_arr[i]=string_arr[i].replace(/\s+/g,'');
-                
-                char_arr3=string_arr[i].split('');
-                
-                char_arr3=char_arr3.sort();
-                for(var j=0; j<char_arr3.length; j++) {
-                    if (char_arr3[j]!=char_arr[j]){
-                        solve=string_arr[i];
-                        $(".js").append("Искомая строка - ");                         
-                        $(".js").append(solve);
-
-                        return;
-                    }
-                }
-                        //$(".js").append(string_arr[i]);
-                        //$(".js").append("<br />");          
-           
-            }
-        }
-                          $(".js").append("Искомая строка - ");                         
-                        $(".js").append(solve);
-
+    $(".js").append("Искомая строка:<br />");                         
+    $(".js").append(solve);
 
 }
