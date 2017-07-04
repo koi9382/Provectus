@@ -1,0 +1,137 @@
+@font-face {
+    font-family: OpenSans-SemiBold ;
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: OpenSans-light ;
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+    font-family: OpenSans ;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+* 
+{
+  margin: 0;
+  padding: 0;
+}
+.container-fluid, .row{
+    padding: 0;
+    margin: 0;
+}
+h3{
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    font-size: 24px;
+}
+h2,#side_l{
+    font-family: 'OpenSans-light', sans-serif;
+    
+}
+
+
+a:hover{
+    text-decoration: none;
+}
+.photo_grid{
+    background-image: url(../img/photo_grid.jpg);
+    background-repeat: repeat-x;
+    height:500px;
+}
+.topmenu{
+    height: 100px;
+    text-align: center;
+    
+}
+.topmenu ul {
+    list-style: none;
+    -webkit-padding-start: 0;
+}
+.topmenu li {
+    display: inline-block;
+    margin-left: 75px;
+    line-height: 100px;
+}
+.topmenu li:first-child{
+    margin-left: 0;
+}
+.topmenu a {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    color:#000;
+    padding: 1px;
+}
+
+.intro{
+    height: 685px;
+    background-color: #fbfafa;
+    background-image: url(../img/topmenu_shadow.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    text-align: center;
+
+}
+#hotdog{
+    padding-top: 115px;
+    padding-bottom: 30px;
+}
+.intro h2{
+
+
+    max-width: 1000px;
+    font-size: 56px;
+    margin: 0 auto; 
+}
+.b_intro{
+    background-color: #286782;
+    color: #fff;
+    padding: 0 20px;
+    height: 65px;
+    font-size: 20px;
+    margin-top: 70px;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #000000;
+    
+}
+@media (max-width: 1440px) {
+    .mid{
+        width: 100%;
+    }
+}
+@media (min-width: 1440px) {
+    .mid{
+        margin: auto;
+        width: 1440px;
+    }
+}
+#side{
+    max-width: 720px;
+    padding: 0;
+}
+#side img{
+    width: 100%;
+}
+
+#side_l{
+    padding: 215px 0 0 130px;
+    font-size: 18px;
+}
+.headline{
+    position: absolute;
+    top: 238px;
+    left: 80px;
+    width: 20px;
+    height: 10px;
+}
+#footer_side{
+    line-height: 75px;
+    background-color: #efefef;
+    font-family: 'OpenSans', sans-serif;
+    height: 75px;
+}
+#footer_side p{
+    text-align: right;
+    line-height: 75px;
+}
